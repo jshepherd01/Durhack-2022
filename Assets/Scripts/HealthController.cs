@@ -25,6 +25,14 @@ public class HealthController : MonoBehaviour {
             }
         }
 
+        GameObject[] Healers = GameObject.FindGameObjectsWithTag("HealingObject");
+        foreach (var obj in Healers) {
+            HealCollision collisionScript = obj.GetComponent<HealCollision>();
+            if (collisionScript != null) {
+                collisionScript._healthController = this;
+            }
+        }
+
         PlayerHealth = MaxPlayerHealth;
         TurtleShells = PlayerHealth/2;
         UpdateHealth();
