@@ -1236,6 +1236,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2148955118852478807, guid: 9650259e03e0bc44083c5f31a24685b8, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2694113204731882474, guid: 9650259e03e0bc44083c5f31a24685b8, type: 3}
       propertyPath: _healthController
       value: 
