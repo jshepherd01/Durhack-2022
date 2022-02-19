@@ -8,6 +8,8 @@ public class MainControl2 : MonoBehaviour
 
     public Vector2 speed = new Vector2(20, 20);
 
+    public Vector3 Movement;
+
     // Update is called once per frame
     void Update() {
         float inputX = Input.GetAxis("Horizontal");
@@ -20,7 +22,18 @@ public class MainControl2 : MonoBehaviour
         } else {
             sr.flipX = true;
         }
-        Vector3 Movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
+
+        Vector2 SpritePosition = transform.position;
+
+        if (SpritePosition.y <= -4 && inputY < 0) {
+            Movement = new Vector3(speed.x * inputX, 0, 0);
+        } else if (SpritePosition.y >= 4 && inputY > 0){
+            Movement = new Vector3(speed.x * inputX, 0, 0);
+        }
+        else {
+            Movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
+        }
+
 
         Movement *= Time.deltaTime;
 
