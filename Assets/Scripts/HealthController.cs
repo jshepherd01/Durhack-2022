@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour {
@@ -34,7 +35,7 @@ public class HealthController : MonoBehaviour {
         }
 
         if (PlayerHealth <= 0) {
-            // dead
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
