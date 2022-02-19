@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 49eb02307da2a474086c71525b94b466
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - FullHealth: {fileID: 21300000, guid: 64545b04efb17dd4580f180798b075d1, type: 3}
+  - MidHealth: {fileID: 21300000, guid: ee419eccee9ad6341a64e06461560a8c, type: 3}
+  - NoHealth: {fileID: 21300000, guid: 707c0d06371f2dc4e914bac9090c9d4b, type: 3}
+  - ShellHealth: {fileID: 21300000, guid: a1d6883b712d8864a8701ee5ce6ce50d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
