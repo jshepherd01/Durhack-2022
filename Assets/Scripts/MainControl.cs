@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class MainControl : MonoBehaviour
@@ -12,6 +13,12 @@ public class MainControl : MonoBehaviour
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
 
+        GameObject Tsprite = GameObject.Find("TurtleSprite");
+        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+        if (inputX < 0) {
+            Debug.Log("yey");
+            Tsprite.SpriteRenderer.flipX();
+        }
         Vector3 Movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
 
         Movement *= Time.deltaTime;
