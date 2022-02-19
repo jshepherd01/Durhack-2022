@@ -14,10 +14,9 @@ public class MainControl : MonoBehaviour
         float inputY = Input.GetAxis("Vertical");
 
         GameObject Tsprite = GameObject.Find("TurtleSprite");
-        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer sr = Tsprite.GetComponent<SpriteRenderer>();
         if (inputX < 0) {
             Debug.Log("yey");
-            Tsprite.SpriteRenderer.flipX();
         }
         Vector3 Movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
 
