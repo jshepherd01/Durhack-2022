@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour {
 
+    public int MaxPlayerHealth;
+
     public int PlayerHealth; // every 2 points of health is one heart
     public int TurtleShells;
 
@@ -15,6 +17,8 @@ public class HealthController : MonoBehaviour {
 
     // Start is called before the first frame update
     private void Start() {
+        PlayerHealth = MaxPlayerHealth;
+        TurtleShells = PlayerHealth/2;
         UpdateHealth();
     }
 
@@ -52,13 +56,12 @@ public class HealthController : MonoBehaviour {
     }
 
     public void Heal(int heal) {
-        for (int i = 0; i < heal; i++) {
-            if (TurtleShells * 2 <= PlayerHealth) {
-                TurtleShells += 1;
-            } else {
-                PlayerHealth += 1;
-            }
+        PlayerHealth += heal;
+        if (PlayerHealth > MaxPlayerHealth) {
+            PlayerHealth = MaxPlayerHealth;
         }
+        TurtleShells = PlayerHealth/2;
+
         UpdateHealth();
     }
 }

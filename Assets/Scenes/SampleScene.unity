@@ -649,6 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49eb02307da2a474086c71525b94b466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxPlayerHealth: 10
   PlayerHealth: 10
   TurtleShells: 5
   hearts:
