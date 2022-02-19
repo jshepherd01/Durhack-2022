@@ -17,6 +17,14 @@ public class HealthController : MonoBehaviour {
 
     // Start is called before the first frame update
     private void Start() {
+        GameObject[] Damagers = GameObject.FindGameObjectsWithTag("DamagingObject");
+        foreach (var obj in Damagers) {
+            DamageCollision collisionScript = obj.GetComponent<DamageCollision>();
+            if (collisionScript != null) {
+                collisionScript._healthController = this;
+            }
+        }
+
         PlayerHealth = MaxPlayerHealth;
         TurtleShells = PlayerHealth/2;
         UpdateHealth();
