@@ -6,7 +6,7 @@ using UnityEngine;
 public class MainControl : MonoBehaviour
 {
 
-    public Vector2 speed = new Vector2(2, 2);
+    public Vector2 speed = new Vector2(20, 20);
 
     // Update is called once per frame
     void Update() {
@@ -16,7 +16,9 @@ public class MainControl : MonoBehaviour
         GameObject Tsprite = GameObject.Find("TurtleSprite");
         SpriteRenderer sr = Tsprite.GetComponent<SpriteRenderer>();
         if (inputX < 0) {
-            Debug.Log("yey");
+            sr.flipX = false;
+        } else {
+            sr.flipX = true;
         }
         Vector3 Movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
 
