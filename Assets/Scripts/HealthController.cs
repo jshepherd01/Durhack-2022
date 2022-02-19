@@ -50,4 +50,15 @@ public class HealthController : MonoBehaviour {
         }
         UpdateHealth();
     }
+
+    public void Heal(int heal) {
+        for (int i = 0; i < heal; i++) {
+            if (TurtleShells * 2 <= PlayerHealth) {
+                TurtleShells += 1;
+            } else {
+                PlayerHealth += 1;
+            }
+        }
+        UpdateHealth();
+    }
 }
