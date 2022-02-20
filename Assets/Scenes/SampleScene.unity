@@ -828,6 +828,7 @@ GameObject:
   - component: {fileID: 969283075}
   - component: {fileID: 969283076}
   - component: {fileID: 969283077}
+  - component: {fileID: 969283078}
   m_Layer: 0
   m_Name: TurtleSprite
   m_TagString: Untagged
@@ -919,6 +920,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &969283078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969283074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c582a6157b76644a32f9ae243559a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turtle: {fileID: 969283074}
 --- !u!1 &1028468914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,6 +1863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Seaweed
       objectReference: {fileID: 0}
+    - target: {fileID: 5515873791520557347, guid: 873e33dd5b1481246ae92d3558be7715, type: 3}
+      propertyPath: _colourController
+      value: 
+      objectReference: {fileID: 969283078}
     - target: {fileID: 5939439040560857968, guid: 873e33dd5b1481246ae92d3558be7715, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1910,6 +1928,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Seaweed (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5515873791520557347, guid: 873e33dd5b1481246ae92d3558be7715, type: 3}
+      propertyPath: _colourController
+      value: 
+      objectReference: {fileID: 969283078}
     - target: {fileID: 5939439040560857968, guid: 873e33dd5b1481246ae92d3558be7715, type: 3}
       propertyPath: m_IsTrigger
       value: 0
