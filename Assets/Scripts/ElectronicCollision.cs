@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ElectronicCollision : MonoBehaviour {
     [SerializeField] private int damage;
-    [SerializeField] private HealthController _healthController;
-    [SerializeField] public MovementController _movementController;
+    public HealthController _healthController;
 
-    public MovementController player, camera;
-    public Rigidbody2D playerBody, cameraBody;
+    public MovementController player;
+    public Rigidbody2D playerBody;
 
     private void Start() {
+        Debug.Log("Things are happening");
         player = GameObject.Find("TurtleObject").GetComponent<MovementController>();
         playerBody = GameObject.Find("TurtleObject").GetComponent<Rigidbody2D>();
+        Debug.Log(player.speed.ToString());
     }
 
     private IEnumerator OnTriggerEnter2D(Collider2D Collision) {
@@ -20,10 +21,8 @@ public class ElectronicCollision : MonoBehaviour {
             _healthController.DoDamage(damage);
             Vector2 prevPlayer = player.speed;
             player.speed = new Vector2(0, 0);
-            playerBody.velocity = new Vector2(-1, -1);
-            Debug.Log(playerBody.velocity.x.ToString());
+            player.rebound();
             yield return new WaitForSeconds(1f);
-            playerBody.velocity = new Vector2(0, 0);
             player.speed = prevPlayer;
         }
     }

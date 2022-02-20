@@ -19,6 +19,7 @@ public class HealthController : MonoBehaviour {
     private void Start() {
         GameObject[] Damagers = GameObject.FindGameObjectsWithTag("DamagingObject");
         foreach (var obj in Damagers) {
+            Debug.Log(obj.name);
             DamageCollision collisionScript = obj.GetComponent<DamageCollision>();
             if (collisionScript != null) {
                 collisionScript._healthController = this;

@@ -7,11 +7,10 @@ public class BagCollision : MonoBehaviour {
     [SerializeField] private HealthController _healthController;
     [SerializeField] public MovementController _movementController;
 
-    public MovementController player, camera;
+    public MovementController player;
 
     private void Start() {
         player = GameObject.Find("TurtleObject").GetComponent<MovementController>();
-        camera = GameObject.Find("Main Camera").GetComponent<MovementController>();
     }
 
     private IEnumerator OnTriggerEnter2D(Collider2D Collision) {
@@ -19,13 +18,9 @@ public class BagCollision : MonoBehaviour {
             _healthController.DoDamage(damage);
             player.speed.x *= 0.3F;
             player.speed.y *= 0.3F;
-            camera.speed.x *= 0.3F;
-            camera.speed.y *= 0.3F;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(1f);
             player.speed.x /= 0.3F;
             player.speed.y /= 0.3F;
-            camera.speed.x /= 0.3F;
-            camera.speed.y /= 0.3F;
         }
     }
 }
