@@ -73,6 +73,11 @@ public class MovementController : MonoBehaviour {
         reboundTime = 0.1;
     }
 
+    public void bounce(Vector3 Direction) {
+        ReboundMove = Direction * 5f;
+        reboundTime = 0.1;
+    }
+
     public void Reload() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
