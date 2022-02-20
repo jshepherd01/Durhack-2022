@@ -10,6 +10,7 @@ public class OilCollision : MonoBehaviour {
     public MovementController player;
     public Rigidbody2D playerBody;
     public Vector2 defaultSpeed;
+    public int decrement = 15;
 
     private void Start() {
         player = GameObject.Find("TurtleObject").GetComponent<MovementController>();
@@ -17,13 +18,17 @@ public class OilCollision : MonoBehaviour {
         defaultSpeed = player.speed;
     }
 
-    
-
     private void OnTriggerStay2D(Collider2D Collision) {
+        
         if (Collision.CompareTag("Player")) {
-            Debug.Log("awesome");
-            _healthController.DoDamage(damage);
+            if(decrement == 0){
+                _healthController.DoDamage(damage);
+                GameObject playerObj = Collision.gameObject.transform.Find("TurtleSprite").gameObject;
+                StartCoroutine(playerObj.GetComponent<PlayerColourController>().ApplyTempColor(Color.red, 0.1f));
+                decrement = 15;
+            }
             player.speed = 0.5f * defaultSpeed;
+            decrement--;
         }
     }
 

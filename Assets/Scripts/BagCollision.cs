@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BagCollision : MonoBehaviour {
     [SerializeField] private int damage;
-    [SerializeField] private HealthController _healthController;
+    [SerializeField] public HealthController _healthController;
     [SerializeField] public MovementController _movementController;
     private int bobTime = 240;
     private int count = 0;

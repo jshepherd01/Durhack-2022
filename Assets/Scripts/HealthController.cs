@@ -23,6 +23,18 @@ public class HealthController : MonoBehaviour {
             if (collisionScript != null) {
                 collisionScript._healthController = this;
             }
+            BagCollision bagCollisionScript = obj.GetComponent<BagCollision>();
+            if (bagCollisionScript != null) {
+                bagCollisionScript._healthController = this;
+            }
+            OilCollision oilCollisionScript = obj.GetComponent<OilCollision>();
+            if (oilCollisionScript != null) {
+                oilCollisionScript._healthController = this;
+            }
+            ElectronicCollision electricalCollisionScript = obj.GetComponent<ElectronicCollision>();
+            if (electricalCollisionScript != null) {
+                electricalCollisionScript._healthController = this;
+            }
         }
 
         GameObject[] Healers = GameObject.FindGameObjectsWithTag("HealingObject");
