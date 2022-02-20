@@ -6,6 +6,7 @@ public class DamageCollision : MonoBehaviour
 {
     [SerializeField] private int damage;
     [SerializeField] private bool vanish;
+    [SerializeField] private bool bounce;
     public HealthController _healthController;
     public Sprite transparent;
     public GameObject player;
@@ -15,6 +16,9 @@ public class DamageCollision : MonoBehaviour
             _healthController.DoDamage(damage);
             player = Collision.gameObject.transform.Find("TurtleSprite").gameObject;
             StartCoroutine(player.GetComponent<PlayerColourController>().ApplyTempColor(Color.red));
+            if (bounce) {
+                Collision.gameObject.GetComponent<MovementController>().rebound();
+            }
             if (vanish) {
                 GetComponent<SpriteRenderer>().sprite = transparent;
                 GetComponent<BoxCollider2D>().enabled = false;
