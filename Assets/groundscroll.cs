@@ -5,6 +5,8 @@ using UnityEngine;
 public class groundscroll : MonoBehaviour
 {
 
+    public Rigidbody2D turtle;
+
     Material material;
 
     Vector2 offset;
@@ -19,12 +21,14 @@ public class groundscroll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offset = new Vector2(xVelocity,yVelocity);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        float inputX = Input.GetAxis("Horizontal");
+        offset = new Vector2(inputX,0);
         material.mainTextureOffset += offset * Time.deltaTime;
         
     }
