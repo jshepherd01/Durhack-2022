@@ -9,11 +9,11 @@ public class PlayerColourController : MonoBehaviour
     private int last = 0;
     private int lastStun = 0;
 
-    public IEnumerator ApplyTempColor(Color color) {
+    public IEnumerator ApplyTempColor(Color color, float duration = 0.3f) {
         int thisIndex = ++last;
 
         turtle.GetComponent<SpriteRenderer>().color = color;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(duration);
 
         if (last == thisIndex) {
             if (isStunned) {
