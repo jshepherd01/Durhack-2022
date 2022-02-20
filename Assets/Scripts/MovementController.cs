@@ -12,6 +12,7 @@ public class MovementController : MonoBehaviour {
     public Vector3 LastMove;
     public Vector3 ReboundMove;
     public Vector3 Movement;
+    private GameMaster gm;
 
     private bool dead;
 
@@ -23,6 +24,11 @@ public class MovementController : MonoBehaviour {
     private void Awake() {
         dead = false;
         //material = GameObject.Find("Quad").GetComponent<Renderer>().material;
+    }
+
+    private void Start() {
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        transform.position = gm.lastCheckpointPos;
     }
 
     // Update is called once per frame
@@ -89,4 +95,13 @@ public class MovementController : MonoBehaviour {
         SpriteRenderer sr = Tsprite.GetComponent<SpriteRenderer>();
         sr.sprite = newSprite; 
     }
+    public void bounce(Vector3 Direction) {
+        ReboundMove = Direction * 5f;
+        reboundTime = 0.1;
+    }
+
+    public void Reload() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }

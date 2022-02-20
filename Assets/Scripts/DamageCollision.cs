@@ -17,7 +17,7 @@ public class DamageCollision : MonoBehaviour
             player = Collision.gameObject.transform.Find("TurtleSprite").gameObject;
             StartCoroutine(player.GetComponent<PlayerColourController>().ApplyTempColor(Color.red));
             if (bounce) {
-                Collision.gameObject.GetComponent<MovementController>().rebound();
+                Collision.gameObject.GetComponent<MovementController>().bounce(Collision.gameObject.transform.position - transform.position);
             }
             if (vanish) {
                 GetComponent<SpriteRenderer>().sprite = transparent;
