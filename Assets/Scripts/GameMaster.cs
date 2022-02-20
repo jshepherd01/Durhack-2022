@@ -19,7 +19,6 @@ public class GameMaster : MonoBehaviour
     public int decrement = 60;
     void Update() {
         if(decrement == 0){
-            Debug.Log(lastCheckpointPos.x.ToString());
             decrement = 60;
         } else {
             decrement--;
