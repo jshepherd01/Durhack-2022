@@ -31,9 +31,45 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 258685307897817466, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.181
+      objectReference: {fileID: 0}
+    - target: {fileID: 258685307897817466, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.264
+      objectReference: {fileID: 0}
     - target: {fileID: 645145710732624912, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
       propertyPath: m_Name
       value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718167625337330182, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.177
+      objectReference: {fileID: 0}
+    - target: {fileID: 1718167625337330182, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.264
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583070348802094369, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.208
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583070348802094369, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.087
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583070348802094369, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.64278764
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583070348802094369, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.76604444
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583070348802094369, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3131742928495687937, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
       propertyPath: m_RootOrder
@@ -77,6 +113,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3131742928495687937, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373673631672942966, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241484650121323064, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.197
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241484650121323064, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241484650121323064, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.64278764
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241484650121323064, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7660445
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241484650121323064, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338163255997863316, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8004550618918712990, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061864967490567824, guid: 66c68f98923e2ed42a425e1d390698bf, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
