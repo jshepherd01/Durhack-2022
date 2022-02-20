@@ -7,7 +7,7 @@ using UnityEngine;
 public class MovementController : MonoBehaviour {
 
     public Vector2 speed = new Vector2(2, 2);
-    public int reboundTime = 0;
+    public double reboundTime = 0;
     public Vector3 ReboundMove;
     public Vector3 Movement;
 
@@ -35,8 +35,13 @@ public class MovementController : MonoBehaviour {
         }
 
         if (reboundTime > 0) {
-            reboundTime -= 1;
-            Movement += ReboundMove;
+            if (reboundTime >= Time.deltaTime) {
+                Movement += ReboundMove;
+                reboundTime -= Time.deltaTime;
+            } else {
+                Movement += ReboundMove * (float)(reboundTime / Time.deltaTime);
+                reboundTime = 0;
+            }
         }
 
         Movement *= Time.deltaTime;
@@ -46,7 +51,7 @@ public class MovementController : MonoBehaviour {
 
     public void rebound() {
         ReboundMove = Movement * -500f;
-        reboundTime = 15;
+        reboundTime = 0.1;
         // transform.Translate(Movement * -50f);
     }
 
