@@ -44642,7 +44642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e356eb09684947d418b8647f6bb0234b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastCheckpointPos: {x: 422, y: 0}
+  lastCheckpointPos: {x: -6, y: 0}
   decrement: 60
 --- !u!4 &1412580100
 Transform:
