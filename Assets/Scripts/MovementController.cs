@@ -23,6 +23,7 @@ public class MovementController : MonoBehaviour {
 
     private void Awake() {
         dead = false;
+        GameObject.Find("TurtleSprite").GetComponent<Animator>().enabled = true;
         //material = GameObject.Find("Quad").GetComponent<Renderer>().material;
     }
 
@@ -73,9 +74,8 @@ public class MovementController : MonoBehaviour {
             transform.Translate(Movement);
 
         } else {
-             GameObject.Find("TurtleSprite").GetComponent<Animator>().enabled = false;
             sr.sprite = newSprite;
-            Movement = new Vector3 (0,-1,0);
+            Movement = new Vector3 (0,-2,0);
             Movement *= Time.deltaTime;
             transform.Translate(Movement);
             if(transform.position.y <= -4){
@@ -93,6 +93,7 @@ public class MovementController : MonoBehaviour {
         dead = true;
         GameObject Tsprite = GameObject.Find("TurtleSprite");
         SpriteRenderer sr = Tsprite.GetComponent<SpriteRenderer>();
+        Tsprite.GetComponent<Animator>().enabled = false;
         sr.sprite = newSprite; 
     }
     public void bounce(Vector3 Direction) {

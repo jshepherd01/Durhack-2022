@@ -4049,8 +4049,8 @@ GameObject:
   m_Component:
   - component: {fileID: 127216497}
   - component: {fileID: 127216500}
-  - component: {fileID: 127216499}
   - component: {fileID: 127216498}
+  - component: {fileID: 127216499}
   m_Layer: 0
   m_Name: TurtleSprite
   m_TagString: Untagged
@@ -4095,7 +4095,7 @@ Animator:
   m_GameObject: {fileID: 127216496}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f0c66f446e26ebb4d805b0434b6e3ac1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4ffe5f201c8892a49aab1f86746dcef9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -21059,6 +21059,8 @@ MonoBehaviour:
   MaxPlayerHealth: 10
   PlayerHealth: 10
   TurtleShells: 5
+  spriteRenderer: {fileID: 0}
+  newSprite: {fileID: 0}
   hearts:
   - {fileID: 680042782}
   - {fileID: 1104193542}
@@ -35234,12 +35236,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc32afa4796ed3c4490cea058414ce04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 2, y: 2}
+  speed: {x: 8, y: 4}
   reboundTime: 0
   LastMove: {x: 0, y: 0, z: 0}
   ReboundMove: {x: 0, y: 0, z: 0}
   Movement: {x: 0, y: 0, z: 0}
   material: {fileID: 0}
+  newSprite: {fileID: 21300000, guid: e99a4367cf2ed6e4f9c357fa09abfb42, type: 3}
   offset: {x: 0, y: 0}
 --- !u!61 &1081060207
 BoxCollider2D:
