@@ -17,7 +17,7 @@ public class MovementController : MonoBehaviour {
     public Vector2 offset;
 
     private void Awake() {
-        material = GameObject.Find("Quad").GetComponent<Renderer>().material;
+        //material = GameObject.Find("Quad").GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -56,7 +56,7 @@ public class MovementController : MonoBehaviour {
 
         Movement *= Time.deltaTime;
 
-        material.mainTextureOffset += new Vector2 (Movement.x/6, 0);
+        //material.mainTextureOffset += new Vector2 (Movement.x/6, 0);
 
         transform.Translate(Movement);
     }
