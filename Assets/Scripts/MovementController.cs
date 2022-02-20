@@ -25,15 +25,14 @@ public class MovementController : MonoBehaviour {
             sr.flipX = true;
         }
 
-        Vector2 SpritePosition = transform.position;
-
-        if (SpritePosition.y <= -4 && inputY < 0) {
-            Movement = new Vector3(speed.x * inputX, 0, 0);
-        } else if (SpritePosition.y >= 4 && inputY > 0) {
-            Movement = new Vector3(speed.x * inputX, 0, 0);
-        } else {
-            Movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
+        if (transform.position.y <= -4) {
+            transform.position = new Vector3(transform.position.x, -4, 0);
         }
+        if (transform.position.y >= 4) {
+            transform.position = new Vector3(transform.position.x, 4, 0);
+        }
+
+        Movement = new Vector3(speed.x * inputX, ((transform.position.y <= -4 && inputY < 0) || (transform.position.y >= 4 && inputY > 0)) ? 0 : speed.y * inputY, 0);
 
         LastMove = Movement * 1f;
 
@@ -55,7 +54,6 @@ public class MovementController : MonoBehaviour {
     public void rebound() {
         ReboundMove = LastMove * -5f;
         reboundTime = 0.1;
-        // transform.Translate(Movement * -50f);
     }
 
 }
