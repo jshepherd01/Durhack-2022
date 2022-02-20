@@ -10,10 +10,8 @@ public class ElectronicCollision : MonoBehaviour {
     public Rigidbody2D playerBody;
 
     private void Start() {
-        Debug.Log("Things are happening");
         player = GameObject.Find("TurtleObject").GetComponent<MovementController>();
         playerBody = GameObject.Find("TurtleObject").GetComponent<Rigidbody2D>();
-        Debug.Log(player.speed.ToString());
     }
 
     private IEnumerator OnTriggerEnter2D(Collider2D Collision) {
@@ -22,6 +20,8 @@ public class ElectronicCollision : MonoBehaviour {
             Vector2 prevPlayer = player.speed;
             player.speed = new Vector2(0, 0);
             player.rebound();
+            GameObject playerImage = Collision.gameObject.transform.Find("TurtleSprite").gameObject;
+            StartCoroutine(playerImage.GetComponent<PlayerColourController>().ApplyStun(1f));
             yield return new WaitForSeconds(1f);
             player.speed = prevPlayer;
         }

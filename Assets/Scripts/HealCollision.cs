@@ -10,8 +10,11 @@ public class HealCollision : MonoBehaviour
     public HealthController _healthController;
 
     private void OnTriggerEnter2D(Collider2D Collision) {
+        GameObject player;
         if (Collision.CompareTag("Player")) {
             _healthController.Heal(heal);
+            player = Collision.gameObject.transform.Find("TurtleSprite").gameObject;
+            StartCoroutine(player.GetComponent<PlayerColourController>().ApplyTempColor(Color.green));
             if (vanish) {
                 GetComponent<SpriteRenderer>().enabled = false;
             } else {
