@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class MovementController : MonoBehaviour {
 
-    public Vector2 speed = new Vector2(2, 2);
+    public Vector2 speed = new Vector2(4, 4);
     public double reboundTime = 0;
     public Vector3 LastMove;
     public Vector3 ReboundMove;

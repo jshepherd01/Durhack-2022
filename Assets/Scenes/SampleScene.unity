@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc32afa4796ed3c4490cea058414ce04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 2, y: 2}
+  speed: {x: 4, y: 4}
   reboundTime: 0
   LastMove: {x: 0, y: 0, z: 0}
   ReboundMove: {x: 0, y: 0, z: 0}
