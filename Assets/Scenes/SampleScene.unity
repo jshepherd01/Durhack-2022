@@ -274,7 +274,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quad
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4668889315503278078, guid: acdb7baa95b82184ca2cc75b595fbdf9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: acdb7baa95b82184ca2cc75b595fbdf9, type: 3}
 --- !u!1 &362067375
 GameObject:
@@ -1031,6 +1032,8 @@ MonoBehaviour:
   LastMove: {x: 0, y: 0, z: 0}
   ReboundMove: {x: 0, y: 0, z: 0}
   Movement: {x: 0, y: 0, z: 0}
+  material: {fileID: 0}
+  offset: {x: 0, y: 0}
 --- !u!1 &1041197869
 GameObject:
   m_ObjectHideFlags: 0

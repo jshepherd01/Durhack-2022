@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4186923656711206154}
   - component: {fileID: 3770804302628286771}
   - component: {fileID: 4069878212070066818}
+  - component: {fileID: 7274917263312453267}
   m_Layer: 0
   m_Name: Oil Barrel
   m_TagString: DamagingObject
@@ -124,3 +125,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   OilFab: {fileID: 8155517495282837999, guid: deb4ee8f6492bdf4a9b8384a70d731a8, type: 3}
+--- !u!114 &7274917263312453267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5779318666426071954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa2a4101c4970f43a1343ea585f9c06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  vanish: 0
+  bounce: 1
+  _healthController: {fileID: 0}
+  transparent: {fileID: 0}
+  player: {fileID: 0}

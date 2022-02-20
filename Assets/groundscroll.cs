@@ -6,6 +6,7 @@ public class groundscroll : MonoBehaviour
 {
 
     public Rigidbody2D turtle;
+    public Vector3 Movement;
 
     Material material;
 
