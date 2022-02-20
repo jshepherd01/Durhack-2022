@@ -8,6 +8,7 @@ public class MovementController : MonoBehaviour {
 
     public Vector2 speed = new Vector2(2, 2);
     public double reboundTime = 0;
+    public Vector3 LastMove;
     public Vector3 ReboundMove;
     public Vector3 Movement;
 
@@ -34,6 +35,8 @@ public class MovementController : MonoBehaviour {
             Movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
         }
 
+        LastMove = Movement * 1f;
+
         if (reboundTime > 0) {
             if (reboundTime >= Time.deltaTime) {
                 Movement += ReboundMove;
@@ -50,7 +53,7 @@ public class MovementController : MonoBehaviour {
     }
 
     public void rebound() {
-        ReboundMove = Movement * -500f;
+        ReboundMove = LastMove * -5f;
         reboundTime = 0.1;
         // transform.Translate(Movement * -50f);
     }
