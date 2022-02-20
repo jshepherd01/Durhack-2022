@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovementController : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class MovementController : MonoBehaviour {
     public Vector3 LastMove;
     public Vector3 ReboundMove;
     public Vector3 Movement;
+    private GameMaster gm;
 
     public Material material;
 
@@ -18,6 +20,11 @@ public class MovementController : MonoBehaviour {
 
     private void Awake() {
         //material = GameObject.Find("Quad").GetComponent<Renderer>().material;
+    }
+
+    private void Start() {
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        transform.position = gm.lastCheckpointPos;
     }
 
     // Update is called once per frame
@@ -64,6 +71,10 @@ public class MovementController : MonoBehaviour {
     public void rebound() {
         ReboundMove = LastMove * -5f;
         reboundTime = 0.1;
+    }
+
+    public void Reload() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
