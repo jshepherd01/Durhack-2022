@@ -11,6 +11,9 @@ public class HealthController : MonoBehaviour {
     public int PlayerHealth; // every 2 points of health is one heart
     public int TurtleShells;
 
+    public SpriteRenderer spriteRenderer;
+    public Sprite newSprite;
+
     [SerializeField] private Image[] hearts;
 
     public Sprite FullHealth, MidHealth, NoHealth, ShellHealth;
@@ -67,7 +70,15 @@ public class HealthController : MonoBehaviour {
         }
 
         if (PlayerHealth <= 0) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //change sprite to dead sprite
+            // GameObject.Find("TurtleSprite").GetComponent<Animator>().enabled = false;
+            // spriteRenderer.sprite = newSprite; 
+
+            // GameObject.Find("TurtleObject").GetComponent<Rigidbody2D>().gravityScale = 1;
+            // GameObject.Find("TurtleObject").GetComponent<MovementController>().speed = Vector2.zero;
+
+            GameObject.Find("TurtleObject").GetComponent<MovementController>().die(); 
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
