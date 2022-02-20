@@ -14,11 +14,15 @@ public class MovementController : MonoBehaviour {
     public Vector3 Movement;
     private GameMaster gm;
 
+    private bool dead;
+
     public Material material;
+    public Sprite newSprite;
 
     public Vector2 offset;
 
     private void Awake() {
+        dead = false;
         //material = GameObject.Find("Quad").GetComponent<Renderer>().material;
     }
 
@@ -34,38 +38,50 @@ public class MovementController : MonoBehaviour {
 
         GameObject Tsprite = GameObject.Find("TurtleSprite");
         SpriteRenderer sr = Tsprite.GetComponent<SpriteRenderer>();
-        if (inputX < 0) {
-            sr.flipX = false;
-        } else {
-            sr.flipX = true;
-        }
-
-        if (transform.position.y <= -4) {
-            transform.position = new Vector3(transform.position.x, -4, 0);
-        }
-        if (transform.position.y >= 4) {
-            transform.position = new Vector3(transform.position.x, 4, 0);
-        }
-
-        Movement = new Vector3(speed.x * inputX, ((transform.position.y <= -4 && inputY < 0) || (transform.position.y >= 4 && inputY > 0)) ? 0 : speed.y * inputY, 0);
-
-        LastMove = Movement * 1f;
-
-        if (reboundTime > 0) {
-            if (reboundTime >= Time.deltaTime) {
-                Movement += ReboundMove;
-                reboundTime -= Time.deltaTime;
+        if(dead != true){
+            if (inputX < 0) {
+                sr.flipX = false;
             } else {
-                Movement += ReboundMove * (float)(reboundTime / Time.deltaTime);
-                reboundTime = 0;
+                sr.flipX = true;
+            }
+
+            if (transform.position.y <= -4) {
+                transform.position = new Vector3(transform.position.x, -4, 0);
+            }
+            if (transform.position.y >= 4) {
+                transform.position = new Vector3(transform.position.x, 4, 0);
+            }
+
+            Movement = new Vector3(speed.x * inputX, ((transform.position.y <= -4 && inputY < 0) || (transform.position.y >= 4 && inputY > 0)) ? 0 : speed.y * inputY, 0);
+
+            LastMove = Movement * 1f;
+
+            if (reboundTime > 0) {
+                if (reboundTime >= Time.deltaTime) {
+                    Movement += ReboundMove;
+                    reboundTime -= Time.deltaTime;
+                } else {
+                    Movement += ReboundMove * (float)(reboundTime / Time.deltaTime);
+                    reboundTime = 0;
+                }
+            }
+
+            Movement *= Time.deltaTime;
+
+            //material.mainTextureOffset += new Vector2 (Movement.x/6, 0);
+
+            transform.Translate(Movement);
+
+        } else {
+             GameObject.Find("TurtleSprite").GetComponent<Animator>().enabled = false;
+            sr.sprite = newSprite;
+            Movement = new Vector3 (0,-1,0);
+            Movement *= Time.deltaTime;
+            transform.Translate(Movement);
+            if(transform.position.y <= -4){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
-
-        Movement *= Time.deltaTime;
-
-        //material.mainTextureOffset += new Vector2 (Movement.x/6, 0);
-
-        transform.Translate(Movement);
     }
 
     public void rebound() {
@@ -73,6 +89,12 @@ public class MovementController : MonoBehaviour {
         reboundTime = 0.1;
     }
 
+    public void die(){
+        dead = true;
+        GameObject Tsprite = GameObject.Find("TurtleSprite");
+        SpriteRenderer sr = Tsprite.GetComponent<SpriteRenderer>();
+        sr.sprite = newSprite; 
+    }
     public void bounce(Vector3 Direction) {
         ReboundMove = Direction * 5f;
         reboundTime = 0.1;
