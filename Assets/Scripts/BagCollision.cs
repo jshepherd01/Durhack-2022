@@ -19,6 +19,8 @@ public class BagCollision : MonoBehaviour {
     private IEnumerator OnTriggerEnter2D(Collider2D Collision) {
         if (Collision.CompareTag("Player")) {
             _healthController.DoDamage(damage);
+            GameObject playerObj = Collision.gameObject.transform.Find("TurtleSprite").gameObject;
+            StartCoroutine(playerObj.GetComponent<PlayerColourController>().ApplyTempColor(Color.red));
             player.speed.x *= 0.3F;
             player.speed.y *= 0.3F;
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
