@@ -17,7 +17,7 @@ public class PlayerColourController : MonoBehaviour
 
         if (last == thisIndex) {
             if (isStunned) {
-                turtle.GetComponent<SpriteRenderer>().color = Color.cyan;
+                turtle.GetComponent<SpriteRenderer>().color = new Color(0.28f,0.75f,1f,1f);
             } else {
                 turtle.GetComponent<SpriteRenderer>().color = Color.white;
             }
@@ -28,7 +28,7 @@ public class PlayerColourController : MonoBehaviour
     public IEnumerator ApplyStun(float duration) {
         int thisIndex = ++lastStun;
 
-        turtle.GetComponent<SpriteRenderer>().color = Color.cyan;
+        turtle.GetComponent<SpriteRenderer>().color = new Color(0.28f,0.75f,1f,1f);
         isStunned = true;
         yield return new WaitForSeconds(duration);
 
