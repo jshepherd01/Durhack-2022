@@ -6,9 +6,6 @@ public class BagCollision : MonoBehaviour {
     [SerializeField] private int damage;
     [SerializeField] public HealthController _healthController;
     [SerializeField] public MovementController _movementController;
-    private int bobTime = 240;
-    private int count = 0;
-    private float direction = 0.0005f;
 
     public MovementController player;
 
@@ -29,16 +26,5 @@ public class BagCollision : MonoBehaviour {
             player.speed.y /= 0.3F;
             Destroy(this.gameObject);
         }
-    }
-
-    private void Update() {
-        if(count < bobTime) {
-            this.gameObject.transform.position = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.y + direction);
-            count++;
-        } else {
-            direction *= -1;
-            count = 0;
-        }
-
     }
 }

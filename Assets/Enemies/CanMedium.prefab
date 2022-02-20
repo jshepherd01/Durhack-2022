@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1139109962564489863, guid: 0b01afc7226fc724dbf709beb9049f9d, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2672604289903455671, guid: 0b01afc7226fc724dbf709beb9049f9d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7133179452794242945, guid: 0b01afc7226fc724dbf709beb9049f9d, type: 3}
       propertyPath: m_Name
-      value: Can
+      value: CanMedium
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b01afc7226fc724dbf709beb9049f9d, type: 3}
