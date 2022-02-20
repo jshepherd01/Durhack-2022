@@ -16,11 +16,13 @@ public class TrashMove : MonoBehaviour
         normal = sr.sprite;
     }
 
-    void OnBecameInvisible() {
-        transform.position = StartPosition;
-        sr.sprite = normal;
-        GetComponent<BoxCollider2D>().enabled = true;
-        rb.velocity = Vector2.zero;
-        rb.angularVelocity = 0.0F;
+    void Update() {
+        if (transform.position.y < -5) {
+            transform.position = StartPosition;
+            sr.sprite = normal;
+            GetComponent<BoxCollider2D>().enabled = true;
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0.0F;
+        }
     }
 }
