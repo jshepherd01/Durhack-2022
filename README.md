@@ -1,2 +1,2 @@
 # Durhack-2022
-It'll probably be a viddy game
+A video game about helping a turtle avoid being gruesomely killed by the waste of humanity
